@@ -34,6 +34,10 @@ public class Grade {
 	@JoinColumn(name = "Idc")//saite uz kolonnu (@Column) no Course klases
 	private Course course;
 	
+	@ManyToOne
+	@JoinColumn(name="Ids")
+	private Student student;
 	
-	
+	//TODO uztaisīt kontruktoru
+
 }
