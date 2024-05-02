@@ -30,5 +30,35 @@ public class CourseFilterController {
 		}
 		
 	}
+	
+	@GetMapping("/professor")//localhost:8080/course/filter/professor?id=2
+	public String getCourseFilterProfessorById(@RequestParam("id") int id,
+			Model model)
+	{
+		try {
+			model.addAttribute("myobjs", courseService.selectCoursesByProfessorId(id));
+			model.addAttribute("mytitle", "Filtered by Professor");
+			return "show-course-all-page"; //parādīsies show-all-course-page.html lapa ar atlasītajiem kursiem
+		} catch (Exception e) {
+			model.addAttribute("msg", e.getMessage());
+			return "error-page";//parādīsies error-page.html lapa ar konkrēto izņemuma ziņu
+		}
+		
+	}
+	
+	@GetMapping("/cp")//localhost:8080/course/filter/cp?cp=2
+	public String getCourseFilterByCp(@RequestParam("cp") int cp,
+			Model model)
+	{
+		try {
+			model.addAttribute("myobjs", courseService.selectCoursesByCP(cp));
+			model.addAttribute("mytitle", "Filtered by Professor");
+			return "show-course-all-page"; //parādīsies show-all-course-page.html lapa ar atlasītajiem kursiem
+		} catch (Exception e) {
+			model.addAttribute("msg", e.getMessage());
+			return "error-page";//parādīsies error-page.html lapa ar konkrēto izņemuma ziņu
+		}
+		
+	}
 
 }
