@@ -46,7 +46,7 @@ public class Seminar6Application {
 				courseRepo.save(c2);
 				
 				grRepo.save(new Grade(st1, c1, 8));//Janis nopelnīja 8 JAVA
-				grRepo.save(new Grade(st1, c2, 10));//Janis nopelnīja 10 LAN
+				grRepo.save(new Grade(st1, c2, 3));//Janis nopelnīja 3 LAN
 				grRepo.save(new Grade(st2, c1, 9));//Liga nopelnīja 9 JAVA
 				grRepo.save(new Grade(st2, c2, 4));//Liga nopelnīja 4 LAN
 				
