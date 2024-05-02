@@ -50,6 +50,13 @@ public class Seminar6Application {
 				grRepo.save(new Grade(st2, c1, 9));//Liga nopelnīja 9 JAVA
 				grRepo.save(new Grade(st2, c2, 4));//Liga nopelnīja 4 LAN
 				
+				//TODO uztaisīt servisu ar sekojošu funkcionalitāti
+				//selectGradesByStudent() - return all grades of specific student;
+				//selectCoursesByStudent() - return all courses where specific student is
+				//involved;
+				//selectCoursesByProfessor() - return all courses of specific professor;
+				//calculateAVGGradeInCourse() - return average grade in specific course;
+				
 			}
 		};
 	}
