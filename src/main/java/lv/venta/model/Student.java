@@ -2,6 +2,7 @@ package lv.venta.model;
 
 import java.util.Collection;
 
+import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,11 +26,6 @@ import lombok.ToString;
 @Table(name = "StudentTable")
 @Entity
 public class Student extends Person{
-	@Setter(value = AccessLevel.NONE)
-	@Column(name = "Ids")
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long ids;
 	
 		
 	@OneToMany(mappedBy = "student")

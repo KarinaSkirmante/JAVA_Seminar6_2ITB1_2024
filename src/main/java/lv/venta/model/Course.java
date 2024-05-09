@@ -48,7 +48,7 @@ public class Course {
 	private int cp;
 	
 	@OneToOne
-	@JoinColumn(name = "Idp")//otras kalses Column nosaukums
+	@JoinColumn(name = "Idpe")//otras kalses Column nosaukums
 	private Professor professor;
 	
 	@OneToMany(mappedBy = "course")//saite uz otras klases mainīgo

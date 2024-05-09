@@ -31,7 +31,7 @@ public class GradeFilterServiceImpl implements IGradeFilterService{
 			throw new Exception("There is no student with this id (" + id + ")");
 		
 		ArrayList<Grade> result = 
-				gradeRepo.findByStudentIds(id);
+				gradeRepo.findByStudentIdpe(id);
 		
 		if(result.isEmpty()) 
 			throw new Exception("There is no grade linked to this student");

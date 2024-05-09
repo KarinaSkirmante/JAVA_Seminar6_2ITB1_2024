@@ -10,7 +10,7 @@ import lv.venta.model.Grade;
 public interface IGradeRepo extends CrudRepository<Grade, Long>{
 
 	//public absract pēc noklusējuma
-	ArrayList<Grade> findByStudentIds(long id);
+	ArrayList<Grade> findByStudentIdpe(long id);
 
 	ArrayList<Grade> findByGrvalueLessThan(int i);
 
