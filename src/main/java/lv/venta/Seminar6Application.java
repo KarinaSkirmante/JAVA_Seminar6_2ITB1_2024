@@ -30,10 +30,20 @@ public class Seminar6Application {
 			
 			@Override
 			public void run(String... args) throws Exception {
+				//TODO
+				//pielikt vel vienu pansiedzeju Arturu Orbidānu
+				//pielikt Datu Struktūras Karinai Sķirmantei
+				//Noamianīt LAN uz Operētājsistēmām
+				//piesaistīt Operētājsistēmā gan Naktiņu, gan Orbidānu
+				//palaists sistemu un apskatīties h2-consolē, vai ir starptabula
+				
+				
 				Professor pr1 = new Professor("Marcis", "Naktins", Degree.mg);
 				Professor pr2 = new Professor("Karina", "Skirmante", Degree.mg);
+				Professor pr3 = new Professor("Arturs", "Orbidans", Degree.mg);
 				profRepo.save(pr1);
 				profRepo.save(pr2);
+				profRepo.save(pr3);
 
 				Student st1 = new Student("Janis", "Berzins");
 				Student st2 = new Student("Liga", "Jauka");
@@ -41,9 +51,24 @@ public class Seminar6Application {
 				studRepo.save(st2);
 
 				Course c1 = new Course("Programesana timekli JAVA", 4, pr2);
-				Course c2 = new Course("LAN sistemas", 2, pr1);
+				Course c2 = new Course("Operetajsistemas", 2, pr1, pr3);
+				Course c3 = new Course("Datu strukturas", 2, pr2);
 				courseRepo.save(c1);
 				courseRepo.save(c2);
+				courseRepo.save(c3);
+				
+				pr2.addCourse(c1);//Karinai piesaistām JAVA
+				pr2.addCourse(c3);//Karinai piesaistām DataSTR
+				profRepo.save(pr2);
+				
+				pr1.addCourse(c2);//Naktiņam piesaistām Opersis
+				profRepo.save(pr1);
+				
+				pr3.addCourse(c2);//Orbidānam piesaistam Opersis
+				profRepo.save(pr3);
+				
+				
+				
 				
 				grRepo.save(new Grade(st1, c1, 8));//Janis nopelnīja 8 JAVA
 				grRepo.save(new Grade(st1, c2, 3));//Janis nopelnīja 3 LAN

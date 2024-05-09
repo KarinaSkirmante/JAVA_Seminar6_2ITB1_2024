@@ -50,7 +50,7 @@ public class CourseFilterServiceImpl implements ICourseFilterService {
 		
 			
 		ArrayList<Course> result = 
-				courseRepo.findByProfessorIdp(id);
+				courseRepo.findByProfessorsIdp(id);
 		
 		if(result.isEmpty())
 			throw new Exception("There is no course linked to this professor");
